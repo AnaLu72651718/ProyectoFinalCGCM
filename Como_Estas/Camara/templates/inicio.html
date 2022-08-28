@@ -6,15 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDU-KIDS</title>
     <link rel="stylesheet" type="text/css" href="../static/inicio.css" media="screen" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
 
 </head>
 <body>
-
-    <h1 class="title">EDU-KIDS</h1>
+    <div class="header">
+        <h1 class="title">EDU-KIDS</h1>
+        <button id="open" class="btn"><i class="fa fa-info"> Necesitas ayuda?</i></button>
+    </div>
 
     <div class="container">
-
         <div class="card">
             <img src="https://img.freepik.com/vector-premium/mano-dibujos-animados_60352-2661.jpg">
             <h4>Conteo de dedos</h4>
@@ -28,8 +30,35 @@
             <p>Dibuja en un papel la forma de un rectángulo y verás si es correcto!</p>
             <a href="/Camara/testCamara">Jugar</a>
         </div>
-
-
     </div>
+
+    <div id="modal_container" class="modal-container">
+      <div class="modal">
+        <h1>¿Que puedes hacer?</h1>
+        <ul class="ul-vertical">
+          <li>Verifica si cuentas con un cámara conectada.</li>
+          <li>Selecciona cual de los juegos quieres hacer.</li>
+          <li>Espera unos segundos a que se active tu cámara</li>
+          <li>Depende al juego interactua con la cámara. No tengas miedo! </li>
+        </ul>
+
+          <img width="600" height="500" src="https://1.bp.blogspot.com/-Q9D9SNsza58/XGnIPr2wleI/AAAAAAAADf8/qAIU0U1IAFA8AKFa9jEvOUo5HJPTRE2ZQCLcBGAs/s1600/horacio-gatto.jpg">
+
+        <button id="close">Cerrar</button>
+      </div>
+    </div>
+<script>
+    const open = document.getElementById('open');
+    const modal_container = document.getElementById('modal_container');
+    const close = document.getElementById('close');
+
+    open.addEventListener('click', () => {
+      modal_container.classList.add('show');
+    });
+
+    close.addEventListener('click', () => {
+      modal_container.classList.remove('show');
+    });
+</script>
 </body>
 </html>
